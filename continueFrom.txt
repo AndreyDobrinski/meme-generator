@@ -1,0 +1,8 @@
+
+
+////// Unmark the marked text ///////    X
+////// the marked text can change positions and sizes (only first text does that atm) ///////
+
+
+Need to fix:
+1.mark size not capturing all the text correctly

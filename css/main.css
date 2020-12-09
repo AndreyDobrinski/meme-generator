@@ -1,0 +1,42 @@
+
+* {
+    box-sizing: border-box;
+}
+
+h2{
+    text-align: center;
+}
+
+img{
+    height: 250px;
+    width: 250px;
+}
+
+.header-color{
+    background-color: aqua;
+}
+
+
+
+
+
+.canvas-container{
+    display: none;
+    background-color: gray;
+    margin: auto;
+    border: 1px solid red;
+    width: 90vw;
+    height: 85vh;
+}
+
+
+.canvas-editor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor{
+    width: 30vw;
+    height: 30vh;
+    background-color: aqua;
+}

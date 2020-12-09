@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="init()">
+    <div class="header-color">
+
+        <header class="main-header">
+
+            <div class="logo">memegen</div>
+
+            <ul class="main-nav">
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About</a></li>
+
+            </ul>
+
+        </header>
+
+    </div>
+
+
+    <div class="img-container">
+
+    </div>
+
+
+
+
+
+    <div class="canvas-container">
+        
+        <div class="canvas-editor">
+            
+            <canvas class="my-canvas" width="500" height="500" onclick="onCanvasClick(event)">
+            </canvas>
+    
+            <div class="editor">
+
+                <h2>Make a Meme!</h2>
+
+                <div class="editor-input">
+                    <input type="text" class="text" id="text-1" oninput="onTextInput(value)">
+                </div>
+                <div class="editor-font-size">
+                    <button onclick="onFontChange(1)">+</button>
+                    <button onclick="onFontChange(-1)">-</button>
+                </div>
+
+                <div class="editor-font-placeMentX">
+                    <button onclick="onPlaceChangeX(1)">+</button>
+                    <button onclick="onPlaceChangeX(-1)">-</button>
+                </div>
+
+                <div class="editor-font-placeMentY">
+                    <button onclick="onPlaceChangeY(1)">+</button>
+                    <button onclick="onPlaceChangeY(-1)">-</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
