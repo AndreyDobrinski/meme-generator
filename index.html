@@ -6,18 +6,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="init()">
+<body onload="onInit()">
     <div class="header-color">
 
-        <header class="main-header">
+        <header class="main-header flex space-between align-center ">
 
             <div class="logo">memegen</div>
+            
+            <ul class="main-nav clean-list flex ">
 
-            <ul class="main-nav">
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">About</a></li>
+                <div class="header-menu flex space-between">
+                    <div class="logo">memegen</div>
+                    <button class="menu-btn2" onclick="toggleMenu()">X</button>
+                </div>
+
+                <li><a href="#" onclick="openGallery()">Gallery</a></li>
+                <li><a href="#" onclick="onOpenAbout()">About</a></li>
 
             </ul>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
         </header>
 
@@ -27,9 +35,6 @@
     <div class="img-container">
 
     </div>
-
-
-
 
 
     <div class="canvas-container">
@@ -44,23 +49,40 @@
                 <h2>Make a Meme!</h2>
 
                 <div class="editor-input">
-                    <input type="text" class="text" id="text-1" oninput="onTextInput(value)">
+                    <input type="text" class="editor-text" id="text-1" oninput="onTextInput(value)" placeholder="I never eat Falafel">
                 </div>
+
+
                 <div class="editor-font-size">
-                    <button onclick="onFontChange(1)">+</button>
-                    <button onclick="onFontChange(-1)">-</button>
+                    <button class="font-size-plus"  onclick="onFontChange(1)">A+</button>
+                    <button class="font-size-minus" onclick="onFontChange(-1)">A-</button>
                 </div>
 
                 <div class="editor-font-placeMentX">
-                    <button onclick="onPlaceChangeX(1)">+</button>
-                    <button onclick="onPlaceChangeX(-1)">-</button>
+                    <button class="font-placeMentX-right" onclick="onPlaceChangeX(1)">→</button>
+                    <button class="font-placeMentX-left" onclick="onPlaceChangeX(-1)">←</button>
                 </div>
 
                 <div class="editor-font-placeMentY">
-                    <button onclick="onPlaceChangeY(1)">+</button>
-                    <button onclick="onPlaceChangeY(-1)">-</button>
+                    <button class="font-placeMentY-down" onclick="onPlaceChangeY(1)">↓</button>
+                    <button class="font-placeMentY-up" onclick="onPlaceChangeY(-1)">↑</button>
                 </div>
 
+                <div class="editor-color-change">
+                    <label for="colorStroke"><img class="color-fill-img" src="/icons/brush-icon.png"></label>
+                    <label for="colorFill"><img class="color-stroke-img" src="/icons/paint-icon.png"></label>
+                    <div>
+                        <input type="color" class="color-stroke" id="colorStroke" onchange="onChangeStrokeClr(this.value)">
+                        <input type="color" class="color-fill" id="colorFill" onchange="onChangefillClr(this.value)">
+                    </div>
+                </div>
+
+                <div class="editor-download">
+                    <a href="#" class="editor-download-btn" onclick="onDownloadImg(this)" download="my-meme.jpg">
+                        Download
+                    </a>
+                </div>
+                
             </div>
 
         </div>
@@ -70,9 +92,49 @@
 
 
 
+    <div class="modal">
+
+        <div class="modal-content">
+    
+            <div class="modal-header">
+                <div class="close-modal " onclick="onCloseAbout()">X</div>
+              <h2> Make your OWN meme now!</h2>
+            </div>
+    
+            <div class="modal-body">
+                <p>Here is your chance to show your friends what kind of meme you can make with this Website!</p>
+                <p>Just click on any images from Gallery and start making your OWN meme!</p>
+            </div>
+            
+    
+          </div>
+    
+    </div>
 
 
 
+
+
+
+
+    <footer class="main-footer">
+
+        <div class="footer-container ">
+
+            <div class="logo">memegen</div>
+
+            <div class="copy-right">© 2020 Memegen.com  -  All Rights Reserved  -  Find more free Memes at <span>Memegen.com</span> </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="js/meme-service.js"></script>
+    <script src="js/meme-controller.js"></script>
+    <script src="js/meme-canvas.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

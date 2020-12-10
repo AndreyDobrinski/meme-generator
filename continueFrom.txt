@@ -1,8 +1,72 @@
 
 
-////// Unmark the marked text ///////    X
-////// the marked text can change positions and sizes (only first text does that atm) ///////
+X  ////// Unmark the marked text ///////    
+X  ////// the marked text can change positions and sizes (only first text does that atm) ///////   
+X  ////// WORK ON CSS FOR GALLERY //////
+X  ////// WORK ON CSS FOR EDITOR //////
+X  ////// WORK ON CSS FOR MEDIA //////
+X  ////// WORK ON CSS FOR HAMBURGER //////
+X  ////// let the user choose the stroke and fill color //////
+X  ////// WORK ON CSS ABOUT //////
+ 
+
 
 
 Need to fix:
-1.mark size not capturing all the text correctly
+   1.mark size not capturing all the text correctly(FOR FONT CHANGE)
+X  2.change the makrked color to be diffrent from stroke
+X  3.A BUG WHEN MAKING IMGS TO BE GRID STYLE THERE IS A RANDOM ','
+   4.align grid items to center (PRIORITY)
+
+
+Add feuture for later:
+X  1.let the user choose the stroke and fill color
+   2. add a classlist to the line that is in the picture(cursor pointer)
+
+
+
+
+X Phase4.a is finished
+X Phase4.b is finished
+X Phase4.c is finished
+X Phase4.d is finished
+X Phase4.e is finished
+
+
+
+
+
+DONT FORGET:
+   1.change the vars to 'const','let'
+   2.remove the logs
+X  3.make servise and control for JS
+   4.use new function shortcut
+   5.do destructure 
+
+
+
+
+
+
+BONUSES:
+   1. Save created Memes to the “Memes” TAB (using local storage)
+   2. Support “Drag&Drop” of the text lines
+   3. Add “search” to the Image-Gallery Page
+   4. Add stickers (emojies, sunglasses, hats, etc)
+   5. Drag and drop stickers
+   6. Share on Facebook (use the sample code provided)
+   7. Support using various aspect-ratio of images
+   8. Allow using an image from your computer
+   9. Add “search by keywords” to Image-Gallery Page
+   10. Inline (on Canvas) text editing
+   11. Resize sticker
+   12. Website theme: celeb-meme, politic-meme, ani-meme, kid-meme , Mondial-meme
+   13. Use the new Web Share API to share your meme
+   14. i18n for Hebrew
+
+
+
+
+
+
+
