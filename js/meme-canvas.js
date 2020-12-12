@@ -13,30 +13,24 @@ function canvasInit(id) {
 
 // WHEN LINE CLICKED
 function onCanvasClick(ev) {
-
-    var { offsetX, offsetY } = ev;
-    // console.log(offsetX);
-    var clickedLine = gMeme.lines.findIndex(line => {
+    const { offsetX, offsetY } = ev;
+    const clickedLine = gMeme.lines.findIndex(line => {
         return offsetX >= line.pos.x && offsetX <= line.pos.x + line.pos.xEnd
             && offsetY <= line.pos.y && offsetY >= line.pos.y - line.pos.yEnd
-
     })
 
 
-    console.log(clickedLine)
     gMeme.selectedLineIdx = clickedLine
-    // console.log(gMeme.selectedLineIdx);
     getSelectedLineIdx(gMeme.selectedLineIdx)
     markLine()
 
 }
 
 
-
 // MARK LINE
 function markLine() {
-    var line = gMeme.selectedLineIdx
-    var elImgId = gMeme.selectedImgId
+    const line = gMeme.selectedLineIdx
+    const elImgId = gMeme.selectedImgId
 
     if (line === -1 || gIsMarked) {
         // if its on -1 or already marked
@@ -45,11 +39,12 @@ function markLine() {
         return
         // remove mark
     }
-    var position = gMeme.lines[line].pos
+    const position = gMeme.lines[line].pos
+    const size = getFontSize()
 
 
     gCtx.beginPath();
-    gCtx.rect(position.x -10 , position.y +10 , position.xEnd +15  ,( -1 * position.yEnd ) -10)
+    gCtx.rect(position.x - (size/2) , position.y -(size*0.9) , position.xEnd  , size )
     gCtx.strokeStyle = 'red'
     gCtx.stroke()
     gIsMarked = true
@@ -62,3 +57,11 @@ function getSelectedLineIdx(idx){
     return idx;
 }
 
+
+
+
+
+function getFontSize() {
+    var idx = gMeme.selectedLineIdx
+    return gMeme.lines[idx].size
+}

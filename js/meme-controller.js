@@ -13,28 +13,28 @@ function onInit() {
 
 // RENDER IMGS
 function renderImgs() {
-    var imgs = getImg()
-    var strHtml = imgs.map(function (img) {
-        return `<img src="${img.url}" alt="" onclick="onImgClicked(${img.id})" class="images">`
+    const imgs = getImg()
+    const strHtml = imgs.map(function (img) {
+        return `
+        <div class="img${img.id}">
+            <img src="${img.url}" alt="" onclick="onImgClicked(${img.id})" class="images">
+        </div>
+        `
     })
-    var elImg = document.querySelector('.img-container')
+    const elImg = document.querySelector('.img-container')
     elImg.innerHTML = strHtml.join('')
 }
 
 
 // when img clicked
 function onImgClicked(id) {
-
     document.querySelector('.img-container').style.display = 'none'
-    // document.querySelector('.selected-img-container').style.display = 'block'
     document.querySelector('.canvas-container').style.display = 'block'
 
     getImgById(id)
     canvasInit(id)
 
     gMeme.selectedImgId = id
-    // console.log(gMeme.selectedImgId);
-
 }
 
 
@@ -59,7 +59,7 @@ function onPlaceChangeY(value) {
 
 
 function onDownloadImg(elImg){
-    var imgContent = gCanvas.toDataURL('image/jpeg');
+    const imgContent = gCanvas.toDataURL('image/jpeg');
     elImg.href = imgContent
 }
 
@@ -76,24 +76,53 @@ function onChangefillClr(value){
 }
 
 
-function setStrokeColor(color) {
-    gStrokeColor = color
-}
-
-function setFillColor(color) {
-    gFillColor = color
-}
-
 
 
 
 function onOpenAbout(){
-    var elModal = document.querySelector('.modal')
+    const elModal = document.querySelector('.modal')
     elModal.style.display = 'block'
 }
 
 
 function onCloseAbout(){
-    var elModal = document.querySelector('.modal')
+    const elModal = document.querySelector('.modal')
     elModal.style.display = 'none'
+}
+
+
+function onEasterEggOpen(){
+    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+}
+
+
+
+function onAddedLine(){
+    const elImgId = gMeme.selectedImgId
+
+    const newTextLine = {
+        pos: {
+            x: 80,
+            y: 250,
+            xEnd: 400,
+            yEnd: 40
+        },
+        txt: 'new line',
+        size: 50,
+        align: 'center',
+
+    };
+    addedLine(newTextLine)
+    drawImg(elImgId)
+
+}
+
+
+
+
+function onDeletedLine(){
+    if(!gIsMarked) return
+    const elImgId = gMeme.selectedImgId
+    deletedLine(elImgId)
+    drawImg(elImgId)
 }

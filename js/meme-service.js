@@ -18,28 +18,24 @@ var gMeme = {
             pos: {
                 x: 80,
                 y: 60,
-                xEnd: 400,
+                xEnd: 420,
                 yEnd: 40
             },
             txt: 'I never eat Falafel',
             size: 50,
             align: 'center',
-            // strokeColor: 'black',
-            // fillColor: 'white'
         },
         {
             pos: {
                 x: 150,
                 y: 460,
-                xEnd: 240,
+                xEnd: 270,
                 yEnd: 40
 
             },
             txt: 'I will NOW',
             size: 50,
             align: 'center',
-            // strokeColor: 'black',
-            // fillColor: 'white'
         },
     ]
 }
@@ -105,12 +101,11 @@ var drawTexts = function () {
 
 function drawText(line) {
     gCtx.beginPath()
+
     gCtx.lineWidth = '1.5'
     gCtx.strokeStyle = gStrokeColor
     gCtx.fillStyle = gFillColor
-    // gCtx.font = 'italic 900 60px serif'
-    gCtx.font = `italic 900 ${line.size}px serif`
-    // gCtx.textAlign = 'center'
+    gCtx.font = `normal 900 ${line.size}px Impact`
 
 
     gCtx.fillText(line.txt, line.pos.x, line.pos.y)
@@ -124,13 +119,12 @@ function drawText(line) {
 // // CHANGE TEXT
 function textInput(value) {
     if(!gIsMarked) return
-
-    // console.log(gMeme.selectedImgId);
     var elImgId = gMeme.selectedImgId
     var elCurrIdx = gMeme.selectedLineIdx
-    // console.log(elCurrIdx);
+    var selectedLine  = getSelectedLineIdx(elCurrIdx)
 
-    gMeme.lines[getSelectedLineIdx(elCurrIdx)].txt = value
+
+    gMeme.lines[selectedLine].txt = value
     
     
     drawImg(elImgId)
@@ -144,8 +138,9 @@ function fontChange(value) {
 
     var elImgId = gMeme.selectedImgId
     var elCurrIdx = gMeme.selectedLineIdx
+    var selectedLine  = getSelectedLineIdx(elCurrIdx)
 
-    gMeme.lines[getSelectedLineIdx(elCurrIdx)].size += value
+    gMeme.lines[selectedLine].size += value
     drawImg(elImgId)
 }
 
@@ -156,8 +151,10 @@ function placeChangeX(value) {
 
     var elImgId = gMeme.selectedImgId
     var elCurrIdx = gMeme.selectedLineIdx
+    var selectedLine  = getSelectedLineIdx(elCurrIdx)
 
-    gMeme.lines[getSelectedLineIdx(elCurrIdx)].pos.x += value
+
+    gMeme.lines[selectedLine].pos.x += value
 
     drawImg(elImgId)
 
@@ -169,9 +166,43 @@ function placeChangeY(value) {
 
     var elImgId = gMeme.selectedImgId
     var elCurrIdx = gMeme.selectedLineIdx
+    var selectedLine  = getSelectedLineIdx(elCurrIdx)
 
-    gMeme.lines[getSelectedLineIdx(elCurrIdx)].pos.y += value
+
+    gMeme.lines[selectedLine].pos.y += value
 
     drawImg(elImgId)
 }
 
+
+function addedLine(newTextLine){
+    gMeme.lines.push(newTextLine)
+    setCurrLineIdx(gMeme.lines.length-1)
+}
+
+
+function setCurrLineIdx(idx) {
+    gMeme.selectedLineIdx = idx
+}
+
+function deletedLine(){
+    gMeme.lines.splice(gMeme.selectedLineIdx,1)[0]
+    setCurrLineIdx(-1)
+    
+}
+
+
+
+function setStrokeColor(color) {
+    var elImgId = gMeme.selectedImgId
+    gStrokeColor = color
+    drawImg(elImgId)
+
+}
+
+function setFillColor(color) {
+    var elImgId = gMeme.selectedImgId
+    gFillColor = color
+    drawImg(elImgId)
+
+}

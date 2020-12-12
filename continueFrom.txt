@@ -8,6 +8,10 @@ X  ////// WORK ON CSS FOR MEDIA //////
 X  ////// WORK ON CSS FOR HAMBURGER //////
 X  ////// let the user choose the stroke and fill color //////
 X  ////// WORK ON CSS ABOUT //////
+X  ////// WORK ON THIRED LINE  //////
+X  ////// WORK ON DELETE LINE  //////
+////// try to fix stuff  //////
+
  
 
 
@@ -16,12 +20,14 @@ Need to fix:
    1.mark size not capturing all the text correctly(FOR FONT CHANGE)
 X  2.change the makrked color to be diffrent from stroke
 X  3.A BUG WHEN MAKING IMGS TO BE GRID STYLE THERE IS A RANDOM ','
-   4.align grid items to center (PRIORITY)
+X  4.align grid items to center (PRIORITY)
+   5.when uploading to git , icons not showing
 
 
 Add feuture for later:
 X  1.let the user choose the stroke and fill color
-   2. add a classlist to the line that is in the picture(cursor pointer)
+   2.add a classlist to the line that is in the picture(cursor pointer)
+   3.let use choose fonts
 
 
 
@@ -37,11 +43,11 @@ X Phase4.e is finished
 
 
 DONT FORGET:
-   1.change the vars to 'const','let'
-   2.remove the logs
-X  3.make servise and control for JS
-   4.use new function shortcut
-   5.do destructure 
+X   1.change the vars to 'const','let'
+X   2.remove the logs
+X   3.make servise and control for JS
+X   4.use new function shortcut
+X   5.do destructure 
 
 
 

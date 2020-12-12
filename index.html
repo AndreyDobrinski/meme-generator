@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Memegen By Andrey</title>
+
+       <!-- ICONE -->
+    <link rel="shortcut icon" href="../icons/android-chrome-192x192.png" type="image/png" />
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body onload="onInit()">
@@ -11,7 +15,7 @@
 
         <header class="main-header flex space-between align-center ">
 
-            <div class="logo">memegen</div>
+            <div class="logo noselect">memegen</div>
             
             <ul class="main-nav clean-list flex ">
 
@@ -46,31 +50,36 @@
     
             <div class="editor">
 
-                <h2>Make a Meme!</h2>
+                <h2 class="editor-header noselect">Make a Meme!</h2>
 
                 <div class="editor-input">
                     <input type="text" class="editor-text" id="text-1" oninput="onTextInput(value)" placeholder="I never eat Falafel">
                 </div>
 
 
+                <div class="editor-line">
+                    <button class="line-added"  onclick="onAddedLine()">✚</button>
+                    <button class="line-removed" onclick="onDeletedLine()">🗑️</button>
+                </div>
+
                 <div class="editor-font-size">
                     <button class="font-size-plus"  onclick="onFontChange(1)">A+</button>
                     <button class="font-size-minus" onclick="onFontChange(-1)">A-</button>
                 </div>
 
-                <div class="editor-font-placeMentX">
-                    <button class="font-placeMentX-right" onclick="onPlaceChangeX(1)">→</button>
-                    <button class="font-placeMentX-left" onclick="onPlaceChangeX(-1)">←</button>
-                </div>
+                <div class="editor-font-placeMent">
+                    <button class="font-placeMentX-right" onclick="onPlaceChangeX(5)">→</button>
+                    <button class="font-placeMentX-left" onclick="onPlaceChangeX(-5)">←</button>
 
-                <div class="editor-font-placeMentY">
-                    <button class="font-placeMentY-down" onclick="onPlaceChangeY(1)">↓</button>
-                    <button class="font-placeMentY-up" onclick="onPlaceChangeY(-1)">↑</button>
+                    <button class="font-placeMentY-down" onclick="onPlaceChangeY(5)">↓</button>
+                    <button class="font-placeMentY-up" onclick="onPlaceChangeY(-5)">↑</button>
                 </div>
+                
+   
 
                 <div class="editor-color-change">
-                    <label for="colorStroke"><img class="color-fill-img" src="../Delivery1 - Wednesday 2000/icons/brush-icon.png"></label>
-                    <label for="colorFill"><img class="color-stroke-img" src="../Delivery1 - Wednesday 2000/icons/paint-icon.png"></label>
+                    <label for="colorStroke"><img class="color-fill-img" src="../icons/brush-icon.png"></label>
+                    <label for="colorFill"><img class="color-stroke-img" src="../icons/paint-icon.png"></label>
                     <div>
                         <input type="color" class="color-stroke" id="colorStroke" onchange="onChangeStrokeClr(this.value)">
                         <input type="color" class="color-fill" id="colorFill" onchange="onChangefillClr(this.value)">
@@ -121,9 +130,9 @@
 
         <div class="footer-container ">
 
-            <div class="logo">memegen</div>
+            <div class="logo noselect">memegen</div>
 
-            <div class="copy-right">© 2020 Memegen.com  -  All Rights Reserved  -  Find more free Memes at <span>Memegen.com</span> </div>
+            <div class="copy-right">© 2020 Memegen.com  -  All Rights Reserved  -  Find more free Memes at <span onclick="onEasterEggOpen()">Memegen.com</span> </div>
 
         </div>
 
