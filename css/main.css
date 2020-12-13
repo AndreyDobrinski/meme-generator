@@ -16,6 +16,24 @@
     src: url(../fonts/courgetta/Courgette-Regular.ttf);
 }
 
+@font-face{
+    font-family: dancin;
+    src: url(../fonts/dancin/DancingScript-VariableFont_wght.ttf);
+}
+
+
+
+
+
+/* ASK ABOUT THIS  */
+
+.main-container{
+    position: fixed;
+    width: 100vw;
+}
+
+/* AND ABOUT FOOTER TOO  */
+
 
 
 body{
@@ -34,6 +52,7 @@ h2{
     font-size: 30px;
 
 }
+
 h2:hover{
     cursor: default;
 }
@@ -67,6 +86,7 @@ p{
 .header-color{
     background-color: #e300f7;
     margin-bottom: 40px;
+
 
 }
 
@@ -119,6 +139,8 @@ p{
 /* FOOTER  */
 
 .footer-container{
+    /* position: absolute;
+    width: 100vw; */
 
     background-color: #e300f7;
     text-align: center;
@@ -126,13 +148,15 @@ p{
 }
 
 .footer-container .logo{
+    width: fit-content;
+    margin: 0 auto 33px auto;
     font-family:pacifico ;
     color:rgb(222 156 226);
     font-size: 2rem;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     text-transform: capitalize;
-
 }
+
 .footer-container .logo:hover{
     cursor: default;
     -webkit-text-stroke: 2px rgb(172, 0, 240); /* width and color */
@@ -141,7 +165,7 @@ p{
 
 
 .footer-container .copy-right{
-    color: #0f0d0d;
+    color: #cbaeff;
     font-weight: bold;
 }
 
@@ -150,13 +174,13 @@ p{
 }
 
 .footer-container .copy-right span{
-    color: #ffb122;
+    color:#17decc;
     
 }
 
 
 .footer-container .copy-right span:hover{
-    color: rgb(2, 252, 2);
+    color: rgb(2 21 252);
     cursor: pointer;    
 }
 
@@ -217,12 +241,15 @@ p{
 /* CANVAS  */
 
 .canvas-container{
+    padding-top: 100px;
+    padding-bottom: 100px;
     display: none;
     /* background-color: gray; */
     margin: auto;
     /* border: 1px solid red; */
     width: 90vw;
-    height: 65.2vh;
+    min-height:65.2vh ;
+    /* height: 65.2vh; */
 }
 
 
@@ -241,8 +268,10 @@ p{
 
 
 .editor{
+    /* padding-top: 40px; */
     width: 30vw;
-    height: 40vh;
+    /* height: 40vh; */
+    min-height:40vh ;
     /* background-color: aqua; */
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -265,17 +294,25 @@ p{
 }
 
 .editor-font-size .font-size-plus{
-   margin-right: 30px;
+    background-color: inherit;
+    margin-right: 30px;
+    padding: 0px;
+    font-size: 30px;
+    margin-left: 3px;
+}
+.editor-font-size .font-size-minus{
+    background-color: inherit;
+    padding: 0px;
+    font-size: 30px;
+    margin-left: 8.9px;
 }
 
 .editor-font-size .font-size-plus:hover{
     cursor: pointer;
-    background-color: greenyellow;
 }
 
 .editor-font-size .font-size-minus:hover{
     cursor: pointer;
-    background-color: greenyellow;
 }
 
 
@@ -287,50 +324,30 @@ p{
     margin-bottom: 10px;
 }
 
-.editor-font-placeMent .font-placeMentX-right{
-    margin-right: 30px;
-    margin-bottom: 10px;
-}
-.editor-font-placeMent .font-placeMentX-left{
-    margin-right: 30px;
-    margin-bottom: 10px;
+
+
+.font-placeMentX-right{
+    display: none;
 }
 
-.editor-font-placeMent .font-placeMentX-right:hover{
-    cursor: pointer;
-    background-color: greenyellow;
+.font-placeMentX-left{
+    display: none;
 }
-
-.editor-font-placeMent .font-placeMentX-left:hover{
-    cursor: pointer;
-    background-color: greenyellow;
+.font-placeMentY-up{
+    display: none;
+}
+.font-placeMentY-down{
+    display: none;
 }
 
 
-
-
-
-
-
-/* .editor-font-placeMentY{
-    margin-left: 30px;
-    margin-bottom: 10px;
-
-} */
-
-.editor-font-placeMent .font-placeMentY-down{
-    margin-right: 30px;
+.line-added{
+    display: none;
 }
 
-.editor-font-placeMent .font-placeMentY-down:hover{
-    cursor: pointer;
-    background-color: greenyellow;
+.line-removed{
+    display: none;
 }
-.editor-font-placeMent .font-placeMentY-up:hover{
-    cursor: pointer;
-    background-color: greenyellow;
-}
-
 
 
 
@@ -338,19 +355,6 @@ p{
 .editor-color-change{
     margin-left: 30px;
     margin-bottom: 10px;
-    
-}
-
-.editor-color-change .color-stroke{
-    margin-right: 25px;
-    
-}
-.editor-color-change .color-stroke:hover{
-    cursor: pointer;
-    
-}
-.editor-color-change .color-fill:hover{
-    cursor: pointer;
     
 }
 
@@ -366,23 +370,6 @@ p{
 .editor-line .line-added{
     margin-right: 30px;
 }
-
-
-.editor-line .line-added:hover{
-    cursor: pointer;
-    background-color: greenyellow;
-
-}
-
-
-.editor-line .line-removed:hover{
-    cursor: pointer;
-    background-color: greenyellow;
-
-}
-
-
-
 
 
 
@@ -401,36 +388,53 @@ p{
 }
 .editor-download .editor-download-btn:hover{
     cursor: pointer;
-    background-color: teal;
+    background-color: #e475de;
     padding: 5px;
 
 }
 
 
-.color-stroke-img{
-    width: 25px;
-    height: 25px;
-    margin-left: 50px;
-    
+.icon{
+    width: 30px;
+    height: 30px;
 }
 
-.color-stroke-img:hover{
+.icon:hover{
     cursor: pointer;
+}
 
+
+
+.add-text-img{
+    margin-right: 50px;
+    margin-left: 5px;
+}
+
+.go-right-img{
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.go-left-img{
+    margin-right: 10px;
+}
+.go-down-img{
+    margin-right: 10px;
+}
+
+
+
+
+.color-stroke-img{
+    margin-left: 50px;
+}
+
+.color-fill-img{
+   margin-left: 5px;
 }
 
 #colorStroke{
     visibility: hidden;
-}
-
-.color-fill-img{
-    width: 25px;
-    height: 25px;
-}
-
-.color-fill-img:hover{
-    cursor: pointer;
-
 }
 
 #colorFill{
@@ -438,12 +442,23 @@ p{
 
 }
 
+.color-fill-img:hover{
+    cursor: pointer;
+    
+}
+.color-stroke-img:hover{
+    cursor: pointer;
+
+}
+
+
 
 
 
 /* IMG FOR PHONE */
 
 .img-container{
+    padding-top: 100px;
     display: grid;
     grid-template-columns:repeat(1 , 1fr);
     grid-gap: 30px;
@@ -456,6 +471,11 @@ p{
     -webkit-box-shadow: 1px 0px 30px 0px rgba(53, 67, 255, 1);
     -moz-box-shadow:    1px 0px 30px 0px rgba(53, 67, 255, 1);
     box-shadow:         1px 0px 30px 0px rgba(255 4 217);
+
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 
 
@@ -475,6 +495,7 @@ p{
 .img14,
 .img15{
     margin: auto;
+    
 }
 
 
@@ -527,6 +548,10 @@ p{
 
 
 .modal-header .close-modal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: dancin;
     float: right;
     color: white;
     font-size: 28px;
@@ -576,6 +601,8 @@ p{
 /* TABLET */
 @media (min-width: 830px) {
     .img-container{
+        margin-left: 30px;
+        margin-right: 30px;
         display: grid;
         grid-template-columns:repeat(3 , 1fr);
         grid-gap: 30px;
@@ -585,7 +612,16 @@ p{
     .modal-body{
         height: 100px;
     }
+
+    .modal-body{
+        text-align: center;
+        padding: 0px 20px 20px 20px;
+        height: 150px;
+    }
     
+    .modal-header{
+        padding: 20px;
+    }
 }
 
 @media (max-width:830px){
@@ -594,7 +630,9 @@ p{
         display: none;
         margin: auto;
         width: 80vw;
-        height: 90vh;
+        /* height: 90vh; */
+        min-height:90vh ;
+
     }
     
     .canvas-editor{
@@ -606,7 +644,8 @@ p{
     .editor{
         margin-top: 10px;
         width: 80vw;
-        height: 35vh;
+        /* height: 35vh; */
+        min-height: 39.5vh;
         background: rgb(63,94,251);
         background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     }
@@ -681,9 +720,41 @@ p{
    
     }
 
+    /* img{
+        height: 400px;
+        width: 400px;
+    } */
+    
 }
 
 
+@media (max-width:560px){
+    
+    .modal-content {
+        width: 83.5%;
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+    
+    .modal-body{
+        height: 30vh;
+        padding: 0px 20px 20px 20px;
+    }
+
+    .modal-header h2{
+        padding: 20px;
+
+    }
+
+}
 
 
 

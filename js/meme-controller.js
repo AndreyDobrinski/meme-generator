@@ -82,6 +82,7 @@ function onChangefillClr(value){
 function onOpenAbout(){
     const elModal = document.querySelector('.modal')
     elModal.style.display = 'block'
+
 }
 
 

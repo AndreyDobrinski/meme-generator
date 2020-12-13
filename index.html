@@ -10,35 +10,40 @@
 
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="onInit()">
-    <div class="header-color">
-
-        <header class="main-header flex space-between align-center ">
-
-            <div class="logo noselect">memegen</div>
-            
-            <ul class="main-nav clean-list flex ">
-
-                <div class="header-menu flex space-between">
-                    <div class="logo">memegen</div>
-                    <button class="menu-btn2" onclick="toggleMenu()">X</button>
-                </div>
-
-                <li><a href="#" onclick="openGallery()">Gallery</a></li>
-                <li><a href="#" onclick="onOpenAbout()">About</a></li>
-
-            </ul>
-
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-        </header>
+<body onload="onInit()" >
+    <div class="main-container">
+        
+            <div class="header-color">
+        
+                <header class="main-header flex space-between align-center ">
+        
+                    <div class="logo noselect">memegen</div>
+                    
+                    <ul class="main-nav clean-list flex ">
+        
+                        <div class="header-menu flex space-between">
+                            <div class="logo">memegen</div>
+                            <button class="menu-btn2" onclick="toggleMenu()">X</button>
+                        </div>
+        
+                        <li><a href="#" onclick="openGallery()">Gallery</a></li>
+                        <li><a href="#" onclick="onOpenAbout()">About</a></li>
+        
+                    </ul>
+        
+                    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        
+                </header>
+        
+            </div>
 
     </div>
 
 
-    <div class="img-container">
-
-    </div>
+        <div class="img-container">
+    
+        </div>
+   
 
 
     <div class="canvas-container">
@@ -58,8 +63,11 @@
 
 
                 <div class="editor-line">
-                    <button class="line-added"  onclick="onAddedLine()">✚</button>
-                    <button class="line-removed" onclick="onDeletedLine()">🗑️</button>
+                    <label for="add-text"><img class="icon add-text-img" src="icons/plus-icon.png"></label>
+                    <label for="delete-text"><img class="icon delete-text-img" src="icons/trash-icon.png"></label>
+
+                    <button class="line-added" id="add-text"  onclick="onAddedLine()"></button>
+                    <button class="line-removed" id="delete-text" onclick="onDeletedLine()"></button>
                 </div>
 
                 <div class="editor-font-size">
@@ -68,18 +76,24 @@
                 </div>
 
                 <div class="editor-font-placeMent">
-                    <button class="font-placeMentX-right" onclick="onPlaceChangeX(5)">→</button>
-                    <button class="font-placeMentX-left" onclick="onPlaceChangeX(-5)">←</button>
+                    <label for="go-right"><img class="icon go-right-img" src="icons/right-icon.png"></label>
+                    <label for="go-left"><img class="icon go-left-img" src="icons/left-icon.png"></label>
+                    <label for="go-down"><img class="icon go-down-img" src="icons/down-icon.png"></label>
+                    <label for="go-up"><img class="icon go-up-img" src="icons/up-icon.png"></label>
 
-                    <button class="font-placeMentY-down" onclick="onPlaceChangeY(5)">↓</button>
-                    <button class="font-placeMentY-up" onclick="onPlaceChangeY(-5)">↑</button>
+
+                    <button class="font-placeMentX-right" id="go-right" onclick="onPlaceChangeX(5)"></button>
+                    <button class="font-placeMentX-left" id="go-left" onclick="onPlaceChangeX(-5)"></button>
+
+                    <button class="font-placeMentY-down" id="go-down" onclick="onPlaceChangeY(5)"></button>
+                    <button class="font-placeMentY-up" id="go-up" onclick="onPlaceChangeY(-5)"></button>
                 </div>
                 
    
 
                 <div class="editor-color-change">
-                    <label for="colorStroke"><img class="color-fill-img" src="icons/brush-icon.png"></label>
-                    <label for="colorFill"><img class="color-stroke-img" src="icons/paint-icon.png"></label>
+                    <label for="colorStroke"><img class="icon  color-fill-img" src="icons/brush-icon.png"></label>
+                    <label for="colorFill"><img class="icon  color-stroke-img" src="icons/paint-icon.png"></label>
                     <div>
                         <input type="color" class="color-stroke" id="colorStroke" onchange="onChangeStrokeClr(this.value)">
                         <input type="color" class="color-fill" id="colorFill" onchange="onChangefillClr(this.value)">
@@ -130,7 +144,7 @@
 
         <div class="footer-container ">
 
-            <div class="logo noselect">memegen</div>
+            <div class="logo noselect"> memegen</div>
 
             <div class="copy-right">© 2020 Memegen.com  -  All Rights Reserved  -  Find more free Memes at <span onclick="onEasterEggOpen()">Memegen.com</span> </div>
 

@@ -72,6 +72,28 @@ BONUSES:
 
 
 
+UI fixes needed :
+X  1.change footers paragraph color from black  to somthing like grey.
+X  2.change the download color on hover
+X  3.make a responsive about modal for phone
+X  4.make the pictures bigger when for phone (looks fine on phone mode , ask about it)
+X  5.margin for left and right  for pictures
+X  6.change x about modal 
+X  7.change text from the about from margin below
+X  8.change editor buttons
+X  9.when changing the website size(ctrl+/-) the download is getting out of the editor , same problem with canvas getting to footer(ask about it)
+X  10.fix the footers logo on hover(ask about it)
+   11.remove the download hover maybe?
+   12.ON HOVER on pictures of Gallery , add maybe zoom on pics
+
+
+
+Ask:
+X  1.about header
+X  2.about footer
+X  3.UI 4
+X  4.UI 9
+X  5.UI 10
 
 
 
