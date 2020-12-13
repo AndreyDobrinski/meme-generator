@@ -10,7 +10,7 @@ X  ////// let the user choose the stroke and fill color //////
 X  ////// WORK ON CSS ABOUT //////
 X  ////// WORK ON THIRED LINE  //////
 X  ////// WORK ON DELETE LINE  //////
-////// try to fix stuff  //////
+X  ////// try to fix stuff  //////
 
  
 
@@ -21,7 +21,7 @@ Need to fix:
 X  2.change the makrked color to be diffrent from stroke
 X  3.A BUG WHEN MAKING IMGS TO BE GRID STYLE THERE IS A RANDOM ','
 X  4.align grid items to center (PRIORITY)
-   5.when uploading to git , icons not showing
+X  5.when uploading to git , icons not showing
 
 
 Add feuture for later:
@@ -83,8 +83,8 @@ X  7.change text from the about from margin below
 X  8.change editor buttons
 X  9.when changing the website size(ctrl+/-) the download is getting out of the editor , same problem with canvas getting to footer(ask about it)
 X  10.fix the footers logo on hover(ask about it)
-   11.remove the download hover maybe?
-   12.ON HOVER on pictures of Gallery , add maybe zoom on pics
+X  11.remove the download hover maybe?
+X  12.ON HOVER on pictures of Gallery , add maybe zoom on pics
 
 
 
@@ -97,4 +97,5 @@ X  5.UI 10
 
 
 
-
+fix later :
+1. take out "drawImg()' from servise and put them to controller
